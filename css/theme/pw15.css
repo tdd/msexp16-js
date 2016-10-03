@@ -147,7 +147,9 @@
 }
 
 .theme-color-blue-yellow .reveal p code,
-.theme-color-blue-yellow .reveal li code {
+.theme-color-blue-yellow .reveal li code,
+.theme-color-blue-yellow .reveal p tt,
+.theme-color-blue-yellow .reveal li tt {
   color: yellow; font-size: 105%;
 }
 
@@ -368,7 +370,7 @@
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985)
 }
 
-.reveal p code, .reveal li code {
+.reveal p code, .reveal li code, .reveal p tt, .reveal li tt {
   font-size: 105%;
 }
 

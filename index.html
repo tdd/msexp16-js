@@ -20,8 +20,8 @@
 		<link rel="stylesheet" href="css/theme/sky.css" id="theme-basis">
 		<link rel="stylesheet" href="css/theme/pw15.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/tomorrow.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/prism.css">
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -57,7 +57,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>JavaScript : <br/>le futur, c’est maintenant !</h1>
+					<h1>JavaScript : le futur, c’est maintenant !</h1>
 					<p>
 						<small>Un atelier de <a href="http://tddsworld.com/">Christophe Porteneuve</a> à <a href="https://experiences.microsoft.fr/Event/session/javascript-le-futur-cest-maintenant/70cc4688-d648-e611-80c3-000d3a2220b4">MS experiences 2016</a></small>
 					</p>
@@ -66,7 +66,7 @@
 				<section id="whoami">
 					<h2>whoami</h2>
 
-					<pre><code data-trim class="javascript">
+					<pre><code data-trim class="language-js">
 var christophe = {
   age:        38.91991786447639,
   family:     { wife: 'Élodie', son: 'Maxence' },
@@ -86,47 +86,432 @@ var christophe = {
 				</section>
 
         <section data-state="theme-color-silver-green">
-					<section id="callback-hell">
-  					<h1>FIXME titre</h1>
-            <h3>fixme sous-titre</h3>
+					<section id="naming-and-support">
+  					<h1>ES2015+</h1>
+            <h3>gni ?!</h3>
 					</section>
 
-          <section id="fixme-1">
-            <h2>FIXME titre</h2>
+          <section id="es2015" data-duration="01:00">
+            <h2>ES6 ou ES2015 ?</h2>
 
-            <p>FIXME</p>
+            <p>Rappel : ES = ECMAScript = standard officiel de JavaScript.</p>
+            <br/>
+            <p>Avant 2015, on disait ES6, ES7…</p>
+            <p>Par exemple, <strong>ES3 = 1999</strong>, ES5 = 2009, ES6 = 2015</p>
+            <br/>
+            <p>Mais depuis 2015, on sort une version par an (en juin).</p>
+            <p>On « met la pression » de tenue à jour en numérotant par année.</p>
+            <p>Les noms officiels sont donc désormais ES2015, ES2016, etc.</p>
           </section>
 
-				</section> <!-- #callback-hell -->
+          <section id="native-support" data-duration="03:00">
+            <h2>Et si on avait besoin de rien ?</h2>
+
+            <p>La prise en charge native est bien meilleure que ce qu’on croit.</p>
+            <ul>
+              <li>Edge 14 = 93%</li>
+              <li>Firefox 52 = 94%</li>
+              <li>Chrome 53 / Opera 40 = 97%</li>
+              <li>Safari 10 (dont iOS 10) = 100%</li>
+              <li>Node 6.5 = 97%</li>
+            </ul>
+
+            <p>Et « 90 % » ça suffit en général largement 😉</p>
+          </section>
+
+          <section id="support-cracks" data-duration="01:30">
+            <h2>OK mais… dans la vraie vie…</h2>
+
+            <p>Pas encore de solution propre aux modules ES2015 natifs. <br/>Vous savez ce truc qui déboîte :</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+<u>import React, { PropTypes } from 'react'</u>
+
+<u>export default</u> function Gauge ({ value, max = 100 }) {
+  return &lt;LinearProgress mode='determinate' value={value} max={max} /&gt;
+}
+            </code></pre>
+
+            <p>IE (même 11), Firefox &lt; 45, Chrome &lt; 49, Opera &lt; 36, Safari &lt; 10, iOS &lt; 10, Node &lt 6, Android Browser…</p>
+          </section>
+
+          <section id="es2016-plus" data-duration="00:30">
+            <h2>Et ES2016+, alors ?</h2>
+
+            <p>En plus on n’a parlé que de ES2015 là, mais on a ES2016, non ?</p>
+            <p>Et l’an prochain, avec ES2017 on fait quoi ? Et l’année d’après ?</p>
+          </section>
+				</section> <!-- #naming-and-support -->
 
 				<section data-state="theme-color-forest-yellow">
-          <section id="callback-hell">
-            <h1>FIXME titre</h1>
-            <h3>fixme sous-titre</h3>
+          <section id="babel">
+            <h1><img src="images/babel-logo.svg" style="background: none" width="100%" alt="Babel !" title="Logo du projet Babel" /></h1>
+            <h3>ça roxxe des poneys</h3>
           </section>
 
-          <section id="fixme-1">
-            <h2>FIXME titre</h2>
+          <section id="babel-principle" data-duration="00:30">
+            <h2>Principe</h2>
 
-            <p>FIXME</p>
-          </section>
-        </section> <!-- #promises -->
-
-        <section data-state="theme-color-blue-yellow">
-          <section id="callback-hell">
-            <h1>FIXME titre</h1>
-            <h3>fixme sous-titre</h3>
+            <p>Transpileur : source ➡️ autre source</p>
+            <p>En l’occurence, « autre source » peut descendre jusqu’à ES5</p>
+            <p>L’idée : utiliser les dernières specs <strong>aujourd’hui</strong> (du moment qu’elles sont transpilables).</p>
+            <p>La performance n’est, en pratique, pas un problème.</p>
+            <footer>(En pratique, presque tout ES2015 est transpilable, sauf les proxies)</footer>
           </section>
 
-          <section id="fixme-1">
-            <h2>FIXME titre</h2>
+          <section id="babel-ecosystem" data-duration="01:00">
+            <h2>Babel et l’écosystème JS</h2>
 
-            <p>FIXME</p>
+            <p>Babel est téléchargé (npm) plus de 57K/jour</p>
+            <p>Environ 2 000 modules en dépendent</p>
+            <p>Quand Babel a un souci, l’écosystème JS a chaud…</p>
+            <p><a href="https://babeljs.io/docs/setup/">Intégré avec l’univers</a> (on y reviendra)</p>
+            <p>A permis l’essor (enfin !) d’ES2015+ dans des projets de premier plan (React, Ember 2, Aurelia, JSPM…) et leurs utilisateurs (Facebook, Airbnb, Instagram, etc.)</p>
+          </section>
 
-            <pre><code class="javascript" data-trim data-noescape>
+          <section id="babel-backers" data-duration="00:30">
+            <h2>Pérennité de Babel</h2>
+
+            <p>Né en 2014, le bébé de Sebastian McKenzie 🙏.</p>
+            <p>Désormais 250+ contributeurs.</p>
+            <p>Comme Facebook l’a jugé critique à la mission, ils ont fait comme d’hab’ : on embauche le créateur et les plus gros contributeurs, juste pour continuer.</p>
+            <p>Élément critique d’infrastructure pour beaucoup de grosses boîtes, et 100% FLOSS, donc on est tranquilles.</p>
+            <p>On aura toujours besoin de Babel pour jouer tôt avec les fonctionnalités futures (ce qui est essentiel au processus du TC39).</p>
+          </section>
+
+          <section id="babel-cherry-pick" data-duration="00:30">
+            <h2>Inutile de tout transpiler !</h2>
+
+            <p>Depuis Babel 6, on choisit les syntaxes qu’on veut transpiler.  Tout le reste est laissé tel quel (considéré natif).</p>
+
+            <p>Plus la prise en charge native augmente, moins on a besoin de transpiler de portions de code.  On a tout intérêt à éviter l’approche « bulldozer » hors des PoC / démos / tutos.</p>
+
+            <p>On gagne en perfs au build (transpilation) et à l’exécution (code natif plutôt que polyfillé).</p>
+
+            <footer>Notez toutefois que le code transpilé par Babel a des performances remarquables.</footer>
+          </section>
+
+          <section id="babel-plugins" data-duration="01:00">
+            <h2>Plugins</h2>
+            <h3>Syntaxes et transforms</h3>
+
+            <p>Un plugin de <strong>syntaxe</strong> permet au parser de <strong>reconnaître</strong> une syntaxe au sein du flux JS.  Mais Babel ne la transpile pas pour autant.</p>
+            <p>Un plugin de <strong>transform(ation)</strong> applique le <em>transpiling</em> correspondant pour aboutir à de l’ES5.  Ils exploitent automatiquement les éventuels plugins de syntaxe dont ils ont besoin.</p>
+            <p>
+              Mais <a href="https://babeljs.io/docs/plugins/">ça fait du monde</a> :
+              Babel propose actuellement <strong>plus de 60 transforms</strong>, dont 21 rien que pour ES2015 !
+            </p>
+          </section>
+
+          <section id="babel-presets" data-duration="01:00">
+            <h2>Presets</h2>
+
+            <p>On a donc la notion de <strong>preset</strong> : des groupes thématiques de plugins pour un but précis. On en compte…</p>
+
+            <ul>
+              <li><strong>5 officiels</strong> (<tt>es2015</tt>, <tt>es2016</tt>, <tt>es2017</tt>, <strong><tt>latest</tt></strong> et <tt>react</tt>),</li>
+              <li>4 expérimentaux dédiés aux stades TC-39 (<tt>stage-0</tt> à <tt>stage-3</tt>),</li>
+              <li>et plus de <strong>750 communautaires !</strong></li>
+            </ul>
+
+            <p>Par exemple, <tt>latest</tt> est le Gros Bill™ qui transpile l’univers (tout ES2015+), mais les contribs ont <tt>latest-minimal</tt>, idéal en Node, qui <em>feature-detect</em> point par point 😎</p>
+
+            <p>On peut bien sûr mélanger presets et plugins spécifiques.</p>
+          </section>
+
+          <section id="babel-beyond-es2016" data-duration="00:30">
+            <h2>Bien plus qu’ES2016</h2>
+
+            <p>On l’a vu, Babel gère déjà ES2016, ES2017, et les stades qui alimenteront les versions ultérieures. Par exemple :</p>
+
+            <ul>
+              <li><em>object spread/rest</em> et <tt>static</tt>, qui sont au stade 2</li>
+              <li>le <em>binding operator</em> qui est au stade 0</li>
+            </ul>
+
+            <p>Mais on a aussi des plugins (officiels !) de syntaxes tierces (notamment JSX et les annotations Flow), de conversion de modules (ex. ES2015 ➡️ CommonJS), de minification / optimisation (notamment pour React).</p>
+          </section>
+
+          <section id="babel-settings" data-duration="00:30">
+            <h2>Comment je lui dis ?</h2>
+
+            <p>Soit via un fichier <tt>.babelrc</tt> à la racine du projet (marche partout)</p>
+            <p>Soit via une clé <code>"babel"</code> dans le <tt>package.json</tt> (si tu transpiles au sein d’un script npm).</p>
+            <p>Ça a la même tête, hein : du JSON. Exemple :</p>
+
+            <pre><code class="language-json" data-trim>
+{
+  "presets": ["latest-minimal"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-class-properties",
+    "transform-function-bind"
+  ]
+}
+            </code></pre>
+
+            <p>Du coup il faut avoir les modules :</p>
+
+            <pre><code class="language-bash" data-trim>
+npm install --save-dev babel-preset-latest-minimal \
+  babel-transform-object-rest-spread \
+  babel-transform-class-properties \
+  babel-transform-function-bind
             </code></pre>
           </section>
-        </section> <!-- #async-await -->
+        </section> <!-- #babel -->
+
+        <section data-state="theme-color-blue-yellow">
+          <section id="babelizing">
+            <h1>Jusqu’où je « babelize » ?</h1>
+          </section>
+
+          <section id="babelize-ie9-plus" data-duration="01:00">
+            <h2>Côté browser (si IE9+)</h2>
+
+            <p class="breathing">En gros, il te faut tout. IE9 a 100% d’ES5 (hors le mode strict), mais 0% d’ES2015. IE10 en a 3%, IE11… 11%.  Donc bon.</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+"presets": ["es2015"] // ou "latest" si tu veux E2015+
+            </code></pre>
+          </section>
+
+          <section id="babelize-evergreens" data-duration="01:00">
+            <h2>Côté browsers (evergreens)</h2>
+
+            <p class="breathing">Tu prends les 2 dernières versions (façon Autoprefixer), tu examines tes besoins et la <a href="https://kangax.github.io/compat-table/es6/">table de compatibilité</a>, et tu listes ce qui manque…  Exemple :</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+"plugins": [
+  "transform-es2015-parameters",
+  "transform-es2015-destructuring",
+  "transform-es2015-spread",
+  "transform-async-to-generator",
+  "transform-transform-runtime",
+  "transform-regenerator"
+]
+            </code></pre>
+
+            <footer>(Pour Safari, qui rame loin, j’ai limité à 10+)</footer>
+          </section>
+
+          <section id="babelize-node4" data-duration="01:00">
+            <h2>Node 4.x LTS</h2>
+
+            <p>On a des <a href="https://github.com/jbach/babel-preset-es2015-node4">presets dédiés</a>, maintenus par la communauté. Exemple :</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+"presets": ["es2015-node4", "es2016-node4"], // ou ["latest-minimal"]
+"plugins": ["transform-regenerator"]
+            </code></pre>
+
+            <p>Mais c’est bon avec Node 4, là…  Dans quelques jours la nouvelle LTS c’est Node 6 !</p>
+          </section>
+
+          <section id="babelize-node6" data-duration="01:00">
+            <h2>Node 6.x LTS</h2>
+
+            <p>Excellente prise en charge native de ES2015+, le preset communautaire est donc nettement plus léger.</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+"presets": ["latest-node6"] // ou ["latest-minimal"]
+            </code></pre>
+          </section>
+
+          <section id="babelize-electron" data-duration="01:00">
+            <h2>Electron</h2>
+
+            <p>Electron 1.4.1 est basé sur Chromium 53, Node 6.5 et <strong>v8 5.3</strong>, autant dire que vous avez un gros, gros paquet d’ES pris en charge en natif (quasiment tout ES2016 et diverses parties d’ES2017).</p>
+
+            <p class="breathing">Vu que le v8 est partagé, la meilleure approche est sans doute :</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+"presets": ["latest-minimal"]
+            </code></pre>
+          </section>
+        </section> <!-- #babelizing -->
+
+        <section data-state="theme-color-silver-green">
+          <section id="babel-ides">
+            <h3>Comment j’intègre Babel dans</h3>
+            <h1>mon EDI ?</h1>
+          </section>
+
+<!--
++ (05'00") Mon EDI
+ -->
+
+          <section id="vscode" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="vs" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="jetbrains" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="eclipse" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+        </section> <!-- #babel-ides -->
+
+<!--
+  + (07'00") Mon éditeur
+-->
+
+        <section data-state="theme-color-forest-yellow">
+          <section id="babel-editors">
+            <h3>Comment j’intègre Babel dans</h3>
+            <h1>mon éditeur ?</h1>
+          </section>
+
+          <section id="st3" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="atom" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="brackets" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="notepadpp" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="vim" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="emacs" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+        </section> <!-- #babel-editors -->
+
+<!--
+  + (03'00") Mes bacs à sable en ligne
+ -->
+
+        <section data-state="theme-color-blue-yellow">
+          <section id="babel-playgrounds">
+            <h3>Comment j’intègre Babel dans</h3>
+            <h1>mon éditeur en ligne ?</h1>
+          </section>
+
+          <section id="jsbin" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="codepen" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="jsfiddle" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="cloud9" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="kodio" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="hyperdev" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+        </section> <!-- #babel-playgrounds -->
+
+        <section data-state="theme-color-silver-green">
+          <section id="babel-builds">
+            <h3>Comment j’intègre Babel dans</h3>
+            <h1>ma chaîne de build ?</h1>
+          </section>
+
+<!--
+  + (08'00") Ma chaîne de build
+ -->
+
+          <section id="browserify" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="webpack" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="rollup" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="gulp" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+
+          <section id="grunt" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+        </section> <!-- #babel-builds -->
+
+        <section data-state="theme-color-forest-yellow">
+          <section id="typescript">
+            <h1>Et TypeScript ?</h1>
+          </section>
+
+          <section id="typescript-details" data-duration="FIXME">
+            <h2>FIXME</h2>
+
+            <p>FIXME</p>
+          </section>
+        </section> <!-- #typescript -->
 
 				<section>
 					<h1>Merci !</h1>
@@ -143,6 +528,7 @@ var christophe = {
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
+    <script src="plugin/highlight/prism.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
@@ -170,7 +556,6 @@ var christophe = {
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
