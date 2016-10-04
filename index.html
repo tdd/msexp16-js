@@ -214,7 +214,7 @@ var christophe = {
               <li>et plus de <strong>750 communautaires !</strong></li>
             </ul>
 
-            <p>Par exemple, <tt>latest</tt> est le Gros Bill™ qui transpile l’univers (tout ES2015+), mais les contribs ont <tt>latest-minimal</tt>, idéal en Node, qui <em>feature-detect</em> point par point 😎</p>
+            <p>Par exemple, <tt>latest</tt> transpile l’univers (tout ES2015+), mais les contribs ont <tt>latest-minimal</tt>, idéal en Node, qui <em>feature-detect</em> point par point 😎</p>
 
             <p>On peut bien sûr mélanger presets et plugins spécifiques.</p>
           </section>
@@ -235,16 +235,14 @@ var christophe = {
           <section id="babel-settings" data-duration="00:30">
             <h2>Comment je lui dis ?</h2>
 
-            <p>Soit via un fichier <tt>.babelrc</tt> à la racine du projet (marche partout)</p>
+            <p>Soit via un fichier <tt>.babelrc</tt> (marche partout)</p>
             <p>Soit via une clé <code>"babel"</code> dans le <tt>package.json</tt> (si tu transpiles au sein d’un script npm).</p>
-            <p>Ça a la même tête, hein : du JSON. Exemple :</p>
 
             <pre><code class="language-json" data-trim>
 {
   "presets": ["latest-minimal"],
   "plugins": [
-    "transform-object-rest-spread",
-    "transform-class-properties",
+    "transform-object-rest-spread", "transform-class-properties",
     "transform-function-bind"
   ]
 }
@@ -254,8 +252,7 @@ var christophe = {
 
             <pre><code class="language-bash" data-trim>
 npm install --save-dev babel-preset-latest-minimal \
-  babel-transform-object-rest-spread \
-  babel-transform-class-properties \
+  babel-transform-object-rest-spread babel-transform-class-properties \
   babel-transform-function-bind
             </code></pre>
           </section>
@@ -358,9 +355,9 @@ ext install theme-monokaiextended # meilleure différenciation visuelle
 
           <section id="jetbrains" data-duration="00:45">
             <h2>JetBrains</h2>
-            <h4>(IntelliJ, WebStorm, PHPStorm, RubyMine, PyCharm…)</h4>
+            <h4>(IntelliJ, WebStorm, PHPStorm, etc.)</h4>
 
-            <p>Les versions 2016 récentes (ex. <a href="https://www.jetbrains.com/webstorm/whatsnew/">WebStorm 2016.2</a>+) intègrent ES2015 en natif, ainsi que Babel comme <em>watcher</em> pour la transpilation à la volée.</p>
+            <p>Les versions 2016 récentes (ex. <a href="https://www.jetbrains.com/webstorm/whatsnew/">WebStorm 2016.2</a>+) intègrent ES2015 en natif, ainsi que Babel comme <em>watcher</em>.</p>
 
             <img src="images/babel-webstorm.png" />
           </section>
@@ -385,7 +382,6 @@ ext install theme-monokaiextended # meilleure différenciation visuelle
             <h2>Sublime Text 3</h2>
 
             <p>Installer <a href="https://packagecontrol.io/">PackageControl</a> puis le paquet <a href="https://packagecontrol.io/packages/Babel">Babel</a> (<strong>pas</strong> le paquet ES.Next). Idéalement, faire de « JavaScript (Babel) » la syntaxe par défaut pour les fichiers <tt>.js</tt>.</p>
-            <p>Le thème <a href="https://packagecontrol.io/packages/Monokai%20Extended">Monokai Extended</a> est aussi une bonne idée.</p>
 
             <img src="images/babel-st3.png" />
           </section>
@@ -411,7 +407,6 @@ ext install theme-monokaiextended # meilleure différenciation visuelle
 
             <p>Non, je plaisante.</p>
             <p>Sidéré <s>qu’autant de</s> que des gens s’en servent encore…</p>
-            <p>Ça résiste vaillamment, mais y’a tellement mieux (et portable) !</p>
 
             <img src="images/babel-notepadpp.png" />
           </section>
@@ -501,7 +496,7 @@ ext install theme-monokaiextended # meilleure différenciation visuelle
             <pre class="command-line" data-prompt="$" data-output="2"><code class="language-bash" data-trim data-keep-tags="u">
 npm install --save-dev babelify babel-core \
   babel-preset-latest babel-preset-react
-browserify entry-point.js -o bundle.js <u>-t babelify --presets latest react</u>
+browserify index.js -o bundle.js <u>-t babelify --presets latest react</u>
             </code></pre>
 
             <p class="breathing">Ou dans votre script de <em>bundling</em> :</p>
@@ -509,7 +504,7 @@ browserify entry-point.js -o bundle.js <u>-t babelify --presets latest react</u>
             <pre><code class="language-js" data-trim data-keep-tags="u">
 var fs = require('fs')
 var browserify = require('browserify')
-browserify('./entry-point.js')
+browserify('./index.js')
   <u>.transform('babelify', { presets: ['latest', 'react'] })</u>
   .bundle()
   .pipe(fs.createWriteStream('bundle.js'))
@@ -555,7 +550,7 @@ import json from 'rollup-plugin-json'
 <u>import babel from 'rollup-plugin-babel'</u>
 
 export default {
-  entry: './entry-point.js',
+  entry: './index.js',
   format: 'cjs',
   plugins: [ json()<u>, babel()</u> ],
   dest: 'bundle.js'
@@ -608,6 +603,7 @@ grunt.initConfig({
 
 grunt.registerTask('default', [<u>'babel'</u>])
             </code></pre>
+            <p>Et re-configuration par <tt>.babelrc</tt>.</p>
           </section>
 
           <section id="other-builders" data-duration="00:15">
