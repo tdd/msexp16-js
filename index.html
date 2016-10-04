@@ -337,38 +337,43 @@ npm install --save-dev babel-preset-latest-minimal \
             <h1>mon EDI ?</h1>
           </section>
 
-<!--
-+ (05'00") Mon EDI
- -->
+          <section id="vscode" data-duration="00:45">
+            <h2>Visual Studio Code</h2>
 
-          <section id="vscode" data-duration="FIXME">
-            <h2>FIXME</h2>
+            <pre><code class="language-bash" data-trim>
+ext install vscode-babel-coloring
+ext install theme-monokaiextended # meilleure différenciation visuelle
+</code></pre>
 
-            <p>FIXME</p>
+            <img src="images/babel-vscode.png" />
           </section>
 
-          <section id="vs" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="vs" data-duration="00:30">
+            <h2>Visual Studio</h2>
 
-            <p>FIXME</p>
+            <p><a href="https://webtooling.visualstudio.com/languages/javascript/">ES2015 est pas mal intégré</a> dans la dernière version.</p>
+
+            <footer>(mais vous n’aurez pas d’image parce que VS 2015 Community est trop gros pour mes VM Windows)</footer>
           </section>
 
-          <section id="jetbrains" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="jetbrains" data-duration="00:45">
+            <h2>JetBrains</h2>
+            <h4>(IntelliJ, WebStorm, PHPStorm, RubyMine, PyCharm…)</h4>
 
-            <p>FIXME</p>
+            <p>Les versions 2016 récentes (ex. <a href="https://www.jetbrains.com/webstorm/whatsnew/">WebStorm 2016.2</a>+) intègrent ES2015 en natif, ainsi que Babel comme <em>watcher</em> pour la transpilation à la volée.</p>
+
+            <img src="images/babel-webstorm.png" />
           </section>
 
-          <section id="eclipse" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="eclipse" data-duration="00:45">
+            <h2>Eclipse</h2>
+            <h4>#compassion</h4>
 
-            <p>FIXME</p>
+            <p>Désespérément à la rue (et lent, et lourd…) mais de valeureux membres de la communauté maintiennent <a href="https://github.com/angelozerr/tern.java/wiki/Getting-Started">Tern IDE</a>, basé sur l’excellent <a href="http://ternjs.net/">Tern.js</a>.</p>
+
+            <img src="images/babel-eclipse.png" />
           </section>
         </section> <!-- #babel-ides -->
-
-<!--
-  + (07'00") Mon éditeur
--->
 
         <section data-state="theme-color-forest-yellow">
           <section id="babel-editors">
@@ -376,87 +381,105 @@ npm install --save-dev babel-preset-latest-minimal \
             <h1>mon éditeur ?</h1>
           </section>
 
-          <section id="st3" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="st3" data-duration="01:00">
+            <h2>Sublime Text 3</h2>
 
-            <p>FIXME</p>
+            <p>Installer <a href="https://packagecontrol.io/">PackageControl</a> puis le paquet <a href="https://packagecontrol.io/packages/Babel">Babel</a> (<strong>pas</strong> le paquet ES.Next). Idéalement, faire de « JavaScript (Babel) » la syntaxe par défaut pour les fichiers <tt>.js</tt>.</p>
+            <p>Le thème <a href="https://packagecontrol.io/packages/Monokai%20Extended">Monokai Extended</a> est aussi une bonne idée.</p>
+
+            <img src="images/babel-st3.png" />
           </section>
 
-          <section id="atom" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="atom" data-duration="00:30">
+            <h2>Atom</h2>
 
-            <p>FIXME</p>
+            <p>Bonne prise en charge en natif ; nombreuses extensions possibles avec les paquets <a href="https://atom.io/packages/language-babel">language-babel</a> et <a href="https://atom.io/packages/atom-ternjs">atom-ternjs</a>.</p>
+
+            <img src="images/babel-atom.png" />
           </section>
 
-          <section id="brackets" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="brackets" data-duration="00:30">
+            <h2>Brackets</h2>
 
-            <p>FIXME</p>
+            <p>Gestion correcte en natif, on aura besoin de l’extension JSX si on utilise cette syntaxe complémentaire.</p>
+
+            <img src="images/babel-brackets.png" />
           </section>
 
-          <section id="notepadpp" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="notepadpp" data-duration="00:30">
+            <h2>Notepad++</h2>
 
-            <p>FIXME</p>
+            <p>Non, je plaisante.</p>
+            <p>Sidéré <s>qu’autant de</s> que des gens s’en servent encore…</p>
+            <p>Ça résiste vaillamment, mais y’a tellement mieux (et portable) !</p>
+
+            <img src="images/babel-notepadpp.png" />
           </section>
 
-          <section id="vim" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="vim" data-duration="00:30">
+            <h2>Vim</h2>
 
-            <p>FIXME</p>
+            <p>Évidemment, on peut tout faire.</p>
+            <p>
+              Les trois plugins les plus utilisés sont
+              <a href="https://github.com/pangloss/vim-javascript">vim-javascript</a>,
+              <a href="https://github.com/mxw/vim-jsx">vim-jsx</a> et
+              <a href="https://github.com/othree/es.next.syntax.vim">es.next.syntax.vim</a>.
+            </p>
+
+            <img src="images/babel-vim.png" />
           </section>
 
-          <section id="emacs" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="emacs" data-duration="00:30">
+            <h2>Emacs</h2>
 
-            <p>FIXME</p>
+            <p>Évidemment… on peut tout faire.</p>
+            <p>
+              Manifestement, le plugin populaire est
+              <a href="https://github.com/mooz/js2-mode">js2-mode</a>.
+            </p>
+
+            <img src="images/babel-emacs.png" />
           </section>
         </section> <!-- #babel-editors -->
-
-<!--
-  + (03'00") Mes bacs à sable en ligne
- -->
 
         <section data-state="theme-color-blue-yellow">
           <section id="babel-playgrounds">
             <h3>Comment j’intègre Babel dans</h3>
-            <h1>mon éditeur en ligne ?</h1>
+            <h1>mon éditeur/EDI en ligne ?</h1>
           </section>
 
-          <section id="jsbin" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="jsbin" data-duration="00:30">
+            <h2>JSBin</h2>
 
-            <p>FIXME</p>
+            <p>Il suffit de choisir le mode ES6 / Babel (ou JSX) dans la liste de syntaxes pour le panneau JavaScript.</p>
+            <p>Attention, il utilise JSHint par défaut plutôt qu’ESLint, ce qui rend moins pratique la prise en charge d’ES2015.</p>
+
+            <img src="images/babel-jsbin.png" />
           </section>
 
-          <section id="codepen" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="codepen" data-duration="00:30">
+            <h2>CodePen</h2>
 
-            <p>FIXME</p>
+            <p>Il suffit de choisir Babel comme préprocesseur dans les réglages du panneau JavaScript.</p>
+
+            <img src="images/babel-codepen.png" />
           </section>
 
-          <section id="jsfiddle" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="jsfiddle" data-duration="00:30">
+            <h2>JSFiddle</h2>
 
-            <p>FIXME</p>
+            <p>Il suffit de choisir Babel comme langage dans les réglages du panneau JavaScript.</p>
+
+            <img src="images/babel-jsfiddle.png" />
           </section>
 
-          <section id="cloud9" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="cloud9" data-duration="01:00">
+            <h2>Cloud9</h2>
 
-            <p>FIXME</p>
-          </section>
+            <p>ES2015+ et Babel pris en charge nativement.</p>
 
-          <section id="kodio" data-duration="FIXME">
-            <h2>FIXME</h2>
-
-            <p>FIXME</p>
-          </section>
-
-          <section id="hyperdev" data-duration="FIXME">
-            <h2>FIXME</h2>
-
-            <p>FIXME</p>
+            <img src="images/babel-c9.png" />
           </section>
         </section> <!-- #babel-playgrounds -->
 
@@ -470,34 +493,128 @@ npm install --save-dev babel-preset-latest-minimal \
   + (08'00") Ma chaîne de build
  -->
 
-          <section id="browserify" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="browserify" data-duration="01:00">
+            <h2>Browserify</h2>
 
-            <p>FIXME</p>
+            <p>C’est le <em>transform</em> <a href="https://github.com/babel/babelify"><strong>babelify</strong></a> qui fait l’interface. CLI :</p>
+
+            <pre class="command-line" data-prompt="$" data-output="2"><code class="language-bash" data-trim data-keep-tags="u">
+npm install --save-dev babelify babel-core \
+  babel-preset-latest babel-preset-react
+browserify entry-point.js -o bundle.js <u>-t babelify --presets latest react</u>
+            </code></pre>
+
+            <p class="breathing">Ou dans votre script de <em>bundling</em> :</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+var fs = require('fs')
+var browserify = require('browserify')
+browserify('./entry-point.js')
+  <u>.transform('babelify', { presets: ['latest', 'react'] })</u>
+  .bundle()
+  .pipe(fs.createWriteStream('bundle.js'))
+            </code></pre>
           </section>
 
-          <section id="webpack" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="webpack" data-duration="01:00">
+            <h2>Webpack</h2>
 
-            <p>FIXME</p>
+            <p>On utilise le <a href="https://github.com/babel/babel-loader"><strong>babel-loader</strong></a>.  La config ressemble à ceci :</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+// …
+module: {
+  // …
+  loaders: [
+    // …
+    {
+      test: /\.(?:jsx?|es6)$/,
+      exclude: /(?:node_modules|bower_components)/,
+      loader: 'babel',
+      query: { presets: ['latest', 'react'] }
+    }
+    // …
+  ]
+  // …
+}
+            </code></pre>
           </section>
 
-          <section id="rollup" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="rollup" data-duration="01:00">
+            <h2>Rollup</h2>
 
-            <p>FIXME</p>
+            <p>Le plus simple, c’est le plugin <a href="https://github.com/rollup/rollup-plugin-babel"><strong>babel</strong></a></p>
+            <pre class="command-line" data-prompt="$" data-output="2"><code class="language-bash" data-trim data-keep-tags="u">
+npm install --save-dev rollup-plugin-babel <u>babel-preset-es2015-rollup</u>
+            </code></pre>
+
+            <p class="breathing">Dans la config Rollup :</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+import json from 'rollup-plugin-json'
+<u>import babel from 'rollup-plugin-babel'</u>
+
+export default {
+  entry: './entry-point.js',
+  format: 'cjs',
+  plugins: [ json()<u>, babel()</u> ],
+  dest: 'bundle.js'
+};
+            </code></pre>
+
+            <p>L’activation du preset se fait par un fichier <tt>.babelrc</tt>.</p>
           </section>
 
-          <section id="gulp" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="gulp" data-duration="01:00">
+            <h2>Gulp</h2>
 
-            <p>FIXME</p>
+            <p>Naturellement, on a <a href="https://github.com/babel/gulp-babel"><strong>gulp-babel</strong></a>.  Pour la version avec les sourcemaps, ça donne un truc dans ce style :</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+var gulp = require('gulp')
+var sourcemaps = require('gulp-sourcemaps')
+<u>var babel = require('gulp-babel')</u>
+var concat = require('gulp-concat')
+
+gulp.task('default', function () {
+  return gulp.src('src/**\/*.js')
+    .pipe(sourcemaps.init())
+    <u>.pipe(babel())</u>
+    .pipe(concat('bundle.js'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist'))
+})
+            </code></pre>
+
+            <p>Là aussi, configuration externe par <tt>.babelrc</tt>.</p>
           </section>
 
-          <section id="grunt" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="grunt" data-duration="01:00">
+            <h2>Grunt</h2>
 
-            <p>FIXME</p>
+            <p>Pas de surprise : il y a <a href="https://github.com/babel/grunt-babel"><strong>grunt-babel</strong></a>.  Exemple :</p>
+
+            <pre><code class="language-js" data-trim data-keep-tags="u">
+require('load-grunt-tasks')(grunt)
+
+grunt.initConfig({
+  <u>babel: {
+    options: { sourceMap: true },
+    dist: {
+      files: { 'dist/bundle.js': 'src/**\/*.js' }
+    }
+  }</u>
+})
+
+grunt.registerTask('default', [<u>'babel'</u>])
+            </code></pre>
+          </section>
+
+          <section id="other-builders" data-duration="00:15">
+            <h2>T’as pas parlé du mien !</h2>
+
+            <p>Moi non, mais je suis sûr que <a href="http://babeljs.io/docs/setup/">Babel oui</a>.</p>
+            <p>D’autant que la majorité de ces intégrations sont officielles, maintenues au sein du projet Babel.</p>
           </section>
         </section> <!-- #babel-builds -->
 
@@ -506,10 +623,31 @@ npm install --save-dev babel-preset-latest-minimal \
             <h1>Et TypeScript ?</h1>
           </section>
 
-          <section id="typescript-details" data-duration="FIXME">
-            <h2>FIXME</h2>
+          <section id="ts-vs-es" data-duration="01:30">
+            <h2>TypeScript vs. ES2015+</h2>
 
-            <p>FIXME</p>
+            <p class="breathing">TS ≈ ES2016 + annotations de type optionnelles (+ compat JSX)</p>
+            <p>TS2 transpile vers ES5 par défaut, mais peut viser ES2015.</p>
+            <p>Inclus par défaut dans VS2013u2 et ultérieurs + VSCode.</p>
+            <p>Peu d’inférence de type ; se repose surtout sur les annotations.</p>
+            <p>Comme souvent avec IntelliSense, on a des définitions pré-compilées externes pour éviter de devoir faire de l’inférence profonde.  Vaste référentiel sur <a href="http://definitelytyped.org/">DefinitelyTyped</a>.</p>
+          </section>
+
+          <section id="ts-integration" data-duration="00:30">
+            <h2>Intégrer TypeScript</h2>
+
+            <p>La documentation liste <a href="https://www.typescriptlang.org/docs/handbook/integrating-with-build-tools.html">pas mal d’intégration classiques</a> : Browserify, Webpack, Grunt, Gulp, JSPM/Rollup, etc.</p>
+            <p>En somme, ça se fait bien.</p>
+          </section>
+
+          <section id="flow" data-duration="01:00">
+            <h2>Un mot sur Flow</h2>
+
+            <p>TS n’est pas le seul moyen d’avoir des infos de typage fines sur du code JS.  Le projet <a href="https://flowtype.org/">Flow</a>, de Facebook, est excellent.</p>
+
+            <p class="breathing">J’ai souvent entendu que les retours de Flow étaient plus utiles / efficaces que ceux de TS, mais je n’ai pas comparé personnellement.</p>
+
+            <p>Notez que Babel est capable de <a href="http://babeljs.io/docs/plugins/transform-flow-comments/">lire du code annoté Flow</a>, et que des outils avancés comme Tern.js savent exploiter les annotations Flow pour leur assistance au code.</p>
           </section>
         </section> <!-- #typescript -->
 
